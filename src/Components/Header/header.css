@@ -1,0 +1,42 @@
+:root {
+  --headerHeight: 100px;
+}
+.header {
+  border-radius: 0;
+  height: var(--headerHeight);
+  position: fixed;
+  border: 1px solid black;
+  width: 100%;
+  padding-left: 20px;
+}
+.website-title {
+  font-family: Zapfino;
+  font-size: 24px;
+  float: left;
+  line-height: var(--headerHeight);
+}
+.header-nav {
+  display: none;
+  float: right;
+}
+.header-nav ul {
+  list-style: none;
+  line-height: var(--headerHeight);
+}
+.header-nav li {
+  width: 100px;
+  display: inline-block;
+}
+
+.header-nav-mobile ul {
+  display: none;
+}
+
+@media(min-width: 777px) {
+  .header-nav-mobile {
+    display: none;
+  }
+  .header-nav {
+    display: inline-block;
+  }
+}
