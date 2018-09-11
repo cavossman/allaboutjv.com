@@ -1,0 +1,3 @@
+#d4abbd - pink
+#fec412 - yellow
+#bebebe - silver
