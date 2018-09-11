@@ -1,9 +1,13 @@
 body {
   margin: 0;
+  font-family: arial;
 }
 :root {
   --headerHeight: 100px;
   --footerHeight: 100px;
+  --color1: #d4abbd;
+  --color2: #fec412;
+  --color3: #bebebe;
 }
 a {
   text-decoration: none;
@@ -13,8 +17,31 @@ ul {
   padding-left: 0;
   list-style: none;
 }
+h3 {
+  font-weight: 300;
+}
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+
+
 .page {
   margin-top: var(--headerHeight);
-  background-color: #d4abbd;
+  background-color: var(--color1);
   min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.tinted {
+  opacity: 0.6;
+}
+
+@media (min-width: 1201px) {
+  .container {
+    width: 100%;
+  }
 }

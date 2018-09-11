@@ -9,6 +9,7 @@
   padding-left: 20px;
   text-align: center;
   background-color: #fff;
+  z-index: 50;
 }
 .website-title {
   font-family: Zapfino;

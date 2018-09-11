@@ -32,8 +32,8 @@ class Footer extends Component {
         <div className="footer-nav">
           <ul>
             {
-              menuItems.map((item) => {
-                return <a href={ item.link }><li>{ item.title }</li></a>;
+              menuItems.map((item, index) => {
+                return <a href={ item.link } key={ index }><li>{ item.title }</li></a>;
               })
             }
           </ul>

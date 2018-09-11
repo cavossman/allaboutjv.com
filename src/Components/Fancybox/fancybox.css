@@ -1,0 +1,35 @@
+.fancybox {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+}
+.fancybox img {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.fancybox-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  display: block;
+}
+.fancybox-open img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  max-height: 700px;
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
+}

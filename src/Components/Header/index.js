@@ -49,8 +49,8 @@ class Header extends Component {
         <nav className="header-nav">
           <ul>
             {
-              menuItems.map((item) => {
-                return <a href={ item.link }><li>{ item.title }</li></a>;
+              menuItems.map((item, index) => {
+                return <a href={ item.link } key={ index }><li>{ item.title }</li></a>;
               })
             }
           </ul>
@@ -62,8 +62,8 @@ class Header extends Component {
           { this.state.mm_open &&
             <ul>
               {
-                menuItems.map((item) => {
-                  return <a href={ item.link }><li className="header-nav-mobile-li">{ item.title }</li></a>;
+                menuItems.map((item, index) => {
+                  return <a href={ item.link } key={ index }><li className="header-nav-mobile-li">{ item.title }</li></a>;
                 })
               }
             </ul>
