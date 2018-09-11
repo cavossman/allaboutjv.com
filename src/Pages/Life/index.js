@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class Index extends Component {
+class Life extends Component {
   render() {
     return (
       <div className="page">
-        Index
+        Life
       </div>
     );
   }
 }
-export default Index;
+export default Life;

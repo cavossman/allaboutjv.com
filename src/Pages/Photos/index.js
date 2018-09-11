@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class Index extends Component {
+class Photos extends Component {
   render() {
     return (
       <div className="page">
-        Index
+        Photos
       </div>
     );
   }
 }
-export default Index;
+export default Photos;

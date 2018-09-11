@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class Index extends Component {
+class Book extends Component {
   render() {
     return (
       <div className="page">
-        Index
+        Book
       </div>
     );
   }
 }
-export default Index;
+export default Book;

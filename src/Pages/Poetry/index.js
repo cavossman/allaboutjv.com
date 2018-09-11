@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class Index extends Component {
+class Poetry extends Component {
   render() {
     return (
       <div className="page">
-        Index
+        Poetry
       </div>
     );
   }
 }
-export default Index;
+export default Poetry;
