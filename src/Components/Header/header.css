@@ -11,11 +11,12 @@
   background-color: #fff;
   z-index: 50;
 }
-.website-title {
-  font-family: Zapfino;
-  font-size: 24px;
+.website-logo {
   float: left;
-  line-height: var(--headerHeight);
+  height: 100%;
+}
+.website-logo img {
+  height: 100%;
 }
 .header-nav {
   display: none;
@@ -29,7 +30,11 @@
   width: 100px;
   display: inline-block;
 }
-
+.header-nav li:hover {
+  line-height: calc(var(--headerHeight) - 3px);
+  background-color: #efefef;
+  border-bottom: 3px solid;
+}
 .header-nav-mobile ul {
   position: fixed;
   top: var(--headerHeight);

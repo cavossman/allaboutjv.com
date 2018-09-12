@@ -4,24 +4,33 @@ import './footer.css';
 
 const menuItems = [
                     {
+                      'title': 'Life',
+                      'link': '/life',
+                      'color': 'var(--colorPink)'
+                    },
+                    {
                       'title': 'Photos',
-                      'link': '/photos'
+                      'link': '/photos',
+                      'color': 'var(--colorYellow)'
                     },
                     {
                       'title': 'Music',
-                      'link': '/music'
-                    },
-                    {
-                      'title': 'Life',
-                      'link': '/life'
+                      'link': '/music',
+                      'color': 'var(--colorTeal)'
                     },
                     {
                       'title': 'Poetry',
-                      'link': '/poetry'
+                      'link': '/poetry',
+                      'color': 'var(--colorBlue)'
                     },
                     {
                       'title': 'Book',
-                      'link': '/book'
+                      'link': '/book',
+                      'color': 'var(--colorSilver)'
+                    },
+                    {
+                      'title': 'Contact',
+                      'color': '#000'
                     }
                   ];
 

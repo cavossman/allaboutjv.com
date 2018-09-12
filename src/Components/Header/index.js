@@ -3,27 +3,37 @@ import React, { Component } from 'react';
 import './header.css';
 
 import mmenu_button from '../../images/hamburger.svg';
+import logo from '../../images/logo.png';
 
 const menuItems = [
                     {
+                      'title': 'Life',
+                      'link': '/life',
+                      'color': 'var(--colorPink)'
+                    },
+                    {
                       'title': 'Photos',
-                      'link': '/photos'
+                      'link': '/photos',
+                      'color': 'var(--colorYellow)'
                     },
                     {
                       'title': 'Music',
-                      'link': '/music'
-                    },
-                    {
-                      'title': 'Life',
-                      'link': '/life'
+                      'link': '/music',
+                      'color': 'var(--colorTeal)'
                     },
                     {
                       'title': 'Poetry',
-                      'link': '/poetry'
+                      'link': '/poetry',
+                      'color': 'var(--colorBlue)'
                     },
                     {
                       'title': 'Book',
-                      'link': '/book'
+                      'link': '/book',
+                      'color': 'var(--colorSilver)'
+                    },
+                    {
+                      'title': 'Contact',
+                      'color': '#000'
                     }
                   ];
 
@@ -40,17 +50,32 @@ class Header extends Component {
     this.setState({'mm_open': !this.state.mm_open});
   }
 
+  applyBorder(color, index) {
+    document.getElementById('menu-item-' + index).style({'border-color': color});
+    console.log(document.getElementById('menu-item-' + index));
+  }
+  removeBorder(index) {
+  }
+
   render() {
     return (
       <div className="header">
         <a href="/">
-          <div className="website-title">Jenny Vossman</div>
+          <div className="website-logo">
+            <img src={ logo } alt="" />
+          </div>
         </a>
         <nav className="header-nav">
           <ul>
             {
               menuItems.map((item, index) => {
-                return <a href={ item.link } key={ index }><li>{ item.title }</li></a>;
+                return (
+                  <a href={ item.link } key={ index }>
+                    <li style={{borderColor: item.color}}>
+                      { item.title }
+                    </li>
+                  </a>
+                );
               })
             }
           </ul>

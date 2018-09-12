@@ -5,9 +5,11 @@ body {
 :root {
   --headerHeight: 100px;
   --footerHeight: 100px;
-  --color1: #d4abbd;
-  --color2: #fec412;
-  --color3: #bebebe;
+  --colorPink: #d4abbd;
+  --colorYellow: #ffeaa9;
+  --colorTeal: #4ae8c4;
+  --colorSilver: #bebebe;
+  --colorBlue: #a5cfec;
 }
 a {
   text-decoration: none;
@@ -22,14 +24,16 @@ h3 {
 }
 section {
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 120px;
 }
-
-
+section h3 {
+  padding-top: 0px;
+  margin-top: 0px;
+  font-size: 32px;
+}
 
 .page {
   margin-top: var(--headerHeight);
-  background-color: var(--color1);
   min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
 }
 .container {
