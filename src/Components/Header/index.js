@@ -80,15 +80,19 @@ class Header extends Component {
           <div className="hamburger" onClick={ this.toggleMenu }>
             <img src={ mmenu_button } alt="" />
           </div>
-          { this.state.mm_open &&
             <ul>
-              {
+              { this.state.mm_open &&
                 menuItems.map((item, index) => {
-                  return <a href={ item.link } key={ index }><li className="header-nav-mobile-li">{ item.title }</li></a>;
+                  return (
+                    <a href={ item.link } key={ index }>
+                      <li className="header-nav-mobile-li" onClick={ () => { return !item.link ? Modal.open('contact') : '' } }>
+                        { item.title }
+                      </li>
+                    </a>
+                  );
                 })
               }
             </ul>
-          }
           <ContactModal />
         </nav>
       </div>
