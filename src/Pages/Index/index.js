@@ -3,9 +3,15 @@ import Fancybox from '../../Components/Fancybox';
 
 import './index.css';
 
-import cds from '../../images/homepage-bg.JPG';
+import lainey from '../../images/photos/lainey-sunflower1.JPG';
+import sunflower_sunset from '../../images/photos/sunflower-sunset.JPG';
+import jamaica from '../../images/photos/jamaica-beach.JPG';
 
-const photos = [cds, cds, cds];
+const photos = [
+                  lainey,
+                  sunflower_sunset,
+                  jamaica
+               ];
 
 class Index extends Component {
   render() {

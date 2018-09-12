@@ -5,6 +5,9 @@ import './header.css';
 import mmenu_button from '../../images/hamburger.svg';
 import logo from '../../images/logo.png';
 
+import Modal from '../../Components/Modal';
+import ContactModal from '../../Components/ContactModal';
+
 const menuItems = [
                     {
                       'title': 'Life',
@@ -50,13 +53,6 @@ class Header extends Component {
     this.setState({'mm_open': !this.state.mm_open});
   }
 
-  applyBorder(color, index) {
-    document.getElementById('menu-item-' + index).style({'border-color': color});
-    console.log(document.getElementById('menu-item-' + index));
-  }
-  removeBorder(index) {
-  }
-
   render() {
     return (
       <div className="header">
@@ -71,7 +67,7 @@ class Header extends Component {
               menuItems.map((item, index) => {
                 return (
                   <a href={ item.link } key={ index }>
-                    <li style={{borderColor: item.color}}>
+                    <li style={{borderColor: item.color}} onClick={ () => { return !item.link ? Modal.open('contact') : '' } }>
                       { item.title }
                     </li>
                   </a>
@@ -93,6 +89,7 @@ class Header extends Component {
               }
             </ul>
           }
+          <ContactModal />
         </nav>
       </div>
     );

@@ -32,6 +32,8 @@ section h3 {
   font-size: 32px;
 }
 
+
+/* GLOBAL CLASSES */
 .page {
   margin-top: var(--headerHeight);
   min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
@@ -42,6 +44,9 @@ section h3 {
 }
 .tinted {
   opacity: 0.6;
+}
+.text-center {
+  text-align: center;
 }
 
 @media (min-width: 1201px) {
