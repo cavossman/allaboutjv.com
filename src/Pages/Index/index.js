@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Fancybox from '../../Components/Fancybox';
+import Fancybox from '../../components/Fancybox';
 
 import './index.css';
 
 import lainey from '../../images/photos/lainey-sunflower1.JPG';
 
 import sunflower_sunset from '../../images/photos/sunflower-sunset.JPG';
-import jamaica from '../../images/photos/jamaica-beach.JPG';
+import jamaica from '../../images/photos/jamaica-beach.jpg';
 
 const photos = [
                   lainey,
@@ -31,7 +31,7 @@ class Index extends Component {
             <h3>Featured Photos</h3>
             {
               photos.map((photo, index) =>
-                <Fancybox key={index} image={photo} />
+                <Fancybox key={index} image={photo} height={'300px'} width={'300px'} />
               )
             }
           </div>

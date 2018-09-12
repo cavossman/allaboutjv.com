@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Fancybox from '../../Components/Fancybox';
+import Fancybox from '../../components/Fancybox';
 
 import jamaica from '../../images/photos/jamaica-beach.JPG';
 import jv_jamaica from '../../images/photos/jv-jamaica.JPG';

@@ -5,19 +5,19 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 // PAGE COMPONENTS
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 // PAGE TEMPLATES
-import Homepage from './Pages/Index';
-import Photos from './Pages/Photos';
-import Music from './Pages/Music';
-import Life from './Pages/Life';
-import Poetry from './Pages/Poetry';
-import Book from './Pages/Book';
+import Homepage from './pages/Index';
+import Photos from './pages/Photos';
+import Music from './pages/Music';
+import Life from './pages/Life';
+import Poetry from './pages/Poetry';
+import Book from './pages/Book';
 
 // 404 PAGE
-import NotFound from './Pages/NotFound';
+import NotFound from './pages/NotFound';
 
 // ROUTING FOR ALL PAGES
 class Entry extends Component {

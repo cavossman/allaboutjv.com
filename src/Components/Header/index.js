@@ -5,8 +5,8 @@ import './header.css';
 import mmenu_button from '../../images/hamburger.svg';
 import logo from '../../images/logo.png';
 
-import Modal from '../../Components/Modal';
-import ContactModal from '../../Components/ContactModal';
+import Modal from '../../components/Modal';
+import ContactModal from '../../components/ContactModal';
 
 const menuItems = [
                     {

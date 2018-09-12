@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Modal from '../../Components/Modal';
-import Form from '../../Components/Form';
+import Modal from '../../components/Modal';
+import Form from '../../components/Form';
 
 const contactModalCSS = {
                           'maxHeight': '800px',

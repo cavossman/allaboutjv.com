@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import './fancybox.css';
 
-
 class Fancybox extends Component {
   constructor(props) {
     super(props);
@@ -38,12 +37,17 @@ class Fancybox extends Component {
   }
 
   render() {
+    const { height, width } = this.props;
+    const customCSS = {
+      height: height ? height : '300px',
+      width: width ? width : '300px'
+    };
     return (
-      <div className="fancybox">
-        <img src={ this.props.image } alt="" onClick={ this.openImage } />
+      <div className="fancybox" style={ customCSS } >
+        <div className="thumbnail" style={{backgroundImage: 'url(' + this.props.image + ')'}} onClick={ this.openImage } ></div>
         { this.state.openImage &&
           <div className="fancybox-open">
-            <img src={ this.props.image } alt="" ref={ this.setWrapperRef } />
+            <img src={ this.props.image } alt={this.props.alt ? this.props.alt : ''} ref={ this.setWrapperRef } />
           </div>
         }
       </div>
