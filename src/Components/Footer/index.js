@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Modal from '../../Components/Modal';
+
 
 import './footer.css';
 
@@ -42,7 +44,9 @@ class Footer extends Component {
           <ul>
             {
               menuItems.map((item, index) => {
-                return <a href={ item.link } key={ index }><li>{ item.title }</li></a>;
+                return <a href={ item.link } key={ index }>
+                  <li style={{borderColor: item.color, cursor: 'pointer'}} onClick={ () => { return !item.link ? Modal.open('contact') : '' } }>{ item.title }</li>
+                </a>;
               })
             }
           </ul>

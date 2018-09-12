@@ -67,7 +67,7 @@ class Header extends Component {
               menuItems.map((item, index) => {
                 return (
                   <a href={ item.link } key={ index }>
-                    <li style={{borderColor: item.color}} onClick={ () => { return !item.link ? Modal.open('contact') : '' } }>
+                    <li style={{borderColor: item.color, cursor: 'pointer'}} onClick={ () => { return !item.link ? Modal.open('contact') : '' } }>
                       { item.title }
                     </li>
                   </a>

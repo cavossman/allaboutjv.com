@@ -1,7 +1,6 @@
 .footer {
   height: var(--footerHeight);
-  border-top: 1px solid #000;
-  background-color: #fff;
+  background-color: #e3e3e3;
   text-align: center;
 }
 
@@ -13,6 +12,18 @@
 .footer-nav li {
   width: 100px;
   display: inline-block;
+}
+.footer-nav a {
+  border-right: 1px solid #000;
+  height: 30px;
+}
+.footer-nav a:last-child {
+  border: none;
+}
+.footer-nav li:hover {
+  /* border-bottom: 3px solid;
+  height: calc(var(--footerHeight) - 3px); */
+  background-color: #fff;
 }
 
 @media(max-width: 776px) {
