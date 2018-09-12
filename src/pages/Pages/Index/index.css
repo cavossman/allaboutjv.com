@@ -1,0 +1,44 @@
+.homepage {
+
+}
+.homepage-background {
+  background-color: #000;
+  padding: 0;
+}
+.hero-image {
+  height: calc(100vh - var(--headerHeight) - var(--footerHeight));
+  width: 100%;
+  position: relative;
+
+  background-image: url('../../images/homepage-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  color: #fff;
+}
+.name {
+  bottom: calc(50% - var(--headerHeight));
+}
+.name h1 {
+  font-family: Zapfino;
+  text-align: center;
+  font-size: 72px;
+  margin-bottom: 5px;
+}
+
+.music-section {
+  text-align: center;
+}
+.photos-section {
+  text-align: center;
+  background-color: #e3e3e3;
+}
+.book-section {
+  text-align: center;
+}
