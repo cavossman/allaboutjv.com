@@ -4,6 +4,7 @@ import Fancybox from '../../Components/Fancybox';
 import './index.css';
 
 import lainey from '../../images/photos/lainey-sunflower1.jpg';
+
 import sunflower_sunset from '../../images/photos/sunflower-sunset.jpg';
 import jamaica from '../../images/photos/jamaica-beach.jpg';
 
