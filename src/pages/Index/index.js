@@ -53,7 +53,7 @@ class Index extends Component {
             <h3>Featured Photos</h3>
             {
               photos.map((photo, index) =>
-                <Fancybox key={index} image={photo} height={'300px'} width={'300px'} />
+                <Fancybox uniqueClass={'featured-photos'} key={index} image={photo} height={'300px'} width={'300px'} />
               )
             }
             <br />

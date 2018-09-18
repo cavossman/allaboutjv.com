@@ -32,7 +32,7 @@ class Photos extends Component {
         <div className="container">
           {
             photos.map((photo, index) =>
-              <Fancybox key={index} image={photo} />
+              <Fancybox uniqueClass={'page-photos'} key={index} index={index} image={photo} />
             )
           }
         </div>

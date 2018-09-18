@@ -6,7 +6,8 @@ class Fancybox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      openImage: false
+      openImage: false,
+      index: this.props.index
     }
     this.openImage = this.openImage.bind(this);
 
@@ -27,7 +28,7 @@ class Fancybox extends Component {
   }
 
   handleClickOutside(event) {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+    if(event.target.className === 'fancybox-open') {
       this.setState({'openImage': false});
     }
   }
@@ -36,6 +37,17 @@ class Fancybox extends Component {
     this.wrapperRef = node;
   }
 
+  getImageCount() {
+    return document.getElementsByClassName(this.props.uniqueClass).length;
+  }
+
+  /* @param - height      - Height of thumbnail
+   * @param - width       - Width of thumbnail
+   * @param - index       - Index in set of array of photos - combine with uniqueClass
+   * @param - uniqueClass - Unique class name for array of photos - combine with index
+   * @param - title       - Title of photo, overlayed over bottom of the image
+   *
+   */
   render() {
     const { height, width } = this.props;
     const customCSS = {
@@ -43,11 +55,19 @@ class Fancybox extends Component {
       width: width ? width : '300px'
     };
     return (
-      <div className="fancybox" style={ customCSS } >
+      <div className={'fancybox ' + this.props.uniqueClass} style={ customCSS } >
         <div className="thumbnail" style={{backgroundImage: 'url(' + this.props.image + ')'}} onClick={ this.openImage } ></div>
         { this.state.openImage &&
           <div className="fancybox-open">
-            <img src={ this.props.image } alt={this.props.alt ? this.props.alt : ''} ref={ this.setWrapperRef } />
+            {
+              !isNaN(this.state.index) && this.props.uniqueClass && <div className="count unselectable">{this.state.index + 1} | {this.getImageCount()}</div>
+            }
+            <div className="fancy-photo">
+              <img src={ this.props.image } alt={this.props.alt ? this.props.alt : ''} ref={ this.setWrapperRef } />
+              {
+                this.props.title && <div class="title-overlay">{ this.props.title }</div>
+              }
+            </div>
           </div>
         }
       </div>
