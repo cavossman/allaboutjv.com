@@ -4,7 +4,7 @@ body {
 }
 :root {
   --headerHeight: 100px;
-  --footerHeight: 100px;
+  --footerHeight: 135px;
   --colorPink: #d4abbd;
   --colorYellow: #ffeaa9;
   --colorTeal: #4ae8c4;
@@ -38,6 +38,10 @@ section h3 {
 .page {
   margin-top: var(--headerHeight);
   min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
+  height: auto;
+  display: inline-block;
+  width: 100%;
+  padding-top: 30px;
 }
 .container {
   max-width: 1200px;
@@ -48,6 +52,26 @@ section h3 {
 }
 .text-center {
   text-align: center;
+}
+.btn {
+  display: inline-block;
+  background-color: var(--colorPink);
+  margin: 15px auto;
+  padding: 15px;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.5s ease;
+}
+.btn:hover {
+  opacity: 0.7;
+  color: #000;
+}
+.unselectable {
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
 }
 
 @media (min-width: 1201px) {

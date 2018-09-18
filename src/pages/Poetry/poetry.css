@@ -1,3 +1,13 @@
 .poetry-page {
   background-color: var(--colorBlue);
 }
+.poem {
+  font-family: 'Courier New';
+  background-color: #fff;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.poem h3 {
+  font-weight: bold;
+}

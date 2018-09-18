@@ -14,26 +14,15 @@
   background-size: cover;
   background-position: center;
 }
-
-
-.hero-overlay {
-  position: absolute;
-  bottom: 15px;
-  width: 100%;
-  color: #fff;
-}
-.name {
-  bottom: calc(50% - var(--headerHeight));
-}
-.name h1 {
-  font-family: Zapfino;
-  text-align: center;
-  font-size: 72px;
-  margin-bottom: 5px;
-}
-
 .music-section {
   text-align: center;
+}
+.music-section video {
+  height: 300px;
+  width: 300px;
+  margin: 15px;
+  cursor: pointer;
+  max-width: 100%;
 }
 .photos-section {
   text-align: center;

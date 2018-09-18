@@ -40,6 +40,7 @@ textarea {
   border: 2px solid #ccc;
   background-color: #f8f8f8;
   resize: none;
+  font-family: inherit;
 }
 
 input[type="text"] {

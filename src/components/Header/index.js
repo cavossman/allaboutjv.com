@@ -55,7 +55,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div className="header">
+      <div className="header unselectable">
         <a href="/">
           <div className="website-logo">
             <img src={ logo } alt="" />

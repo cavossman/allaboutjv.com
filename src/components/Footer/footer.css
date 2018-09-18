@@ -5,7 +5,7 @@
 }
 
 .footer-nav ul {
-  line-height: var(--headerHeight);
+  line-height: calc(var(--footerHeight) - 40px);
   margin: 0 auto;
   width: fit-content;
 }
@@ -24,6 +24,10 @@
   /* border-bottom: 3px solid;
   height: calc(var(--footerHeight) - 3px); */
   background-color: #fff;
+}
+.social-icon {
+  width: 30px;
+  height: 30px;
 }
 
 @media(max-width: 776px) {

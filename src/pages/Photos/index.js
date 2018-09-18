@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Fancybox from '../../components/Fancybox';
-import Instagram from '../../components/Instagram';
 
 import jamaica from '../../images/photos/jamaica-beach.jpg';
 import jv_jamaica from '../../images/photos/jv-jamaica.JPG';
@@ -30,7 +29,6 @@ class Photos extends Component {
   render() {
     return (
       <div className="page photos-page">
-        <Instagram />
         <div className="container">
           {
             photos.map((photo, index) =>
