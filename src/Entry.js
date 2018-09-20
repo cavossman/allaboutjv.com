@@ -15,12 +15,29 @@ import Music from './pages/Music';
 import Life from './pages/Life';
 import Poetry from './pages/Poetry';
 import Book from './pages/Book';
+import Admin from './pages/Admin/Admin';
+import Login from './pages/Admin/Login';
 
 // 404 PAGE
 import NotFound from './pages/NotFound';
 
 // ROUTING FOR ALL PAGES
 class Entry extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      loggedIn: false
+    }
+    this.updateUser = this.updateUser.bind(this);
+  }
+
+  updateUser(userStatus, name) {
+    this.setState({username: name, loggedIn: userStatus});
+    console.log('this.state.username: ', this.state.username);
+    console.log('this.state.loggedIn: ', this.state.loggedIn);
+  }
+
   render() {
     return (
       <div className="App">
@@ -33,6 +50,10 @@ class Entry extends Component {
               <Route exact path="/life" component={ Life } />
               <Route exact path="/poetry" component={ Poetry } />
               <Route exact path="/book" component={ Book } />
+              <Route exact path="/admin" component={ Admin } />
+
+              <Route exact path="/login" render={ (props) => {  return <Login {...props} updateUser={this.updateUser} /> } } />
+
               <Route component={ NotFound } />
             </Switch>
           </BrowserRouter>
