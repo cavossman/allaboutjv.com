@@ -38,6 +38,7 @@ class Entry extends Component {
     console.log('this.state.loggedIn: ', this.state.loggedIn);
   }
 
+  //TODO: Create redirect on admin unless user is authenticated - use express-session or something on server? 
   render() {
     return (
       <div className="App">

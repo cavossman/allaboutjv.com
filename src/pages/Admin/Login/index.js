@@ -20,6 +20,7 @@ class Login extends Component {
         this.setState({ [event.target.name]: event.target.value });
     }
 
+    //TODO: complete validation - server returning wrong response if password is incorrect.
     handleSubmit(event) {
         event.preventDefault();
         axios

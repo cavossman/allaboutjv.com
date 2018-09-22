@@ -1,0 +1,53 @@
+.admin-section {
+    position: relative;
+    border: 1px solid #7db9b9;
+    height: fit-content;
+    margin: 15px;
+}
+.collection-selector {
+    height: 75px;
+    line-height: 75px;
+    background-color: #7db9b9;
+    cursor: pointer;
+}
+.collection-selector h3 {
+    color: #fff;
+    margin: 0 30px;
+}
+.expand-section {
+    width: 35px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+.flip {
+    transform: scaleY(-1);
+}
+
+.collection-results .row {
+    position: relative;
+    padding: 15px;
+    margin: 0;
+}
+.collection-results .row:nth-child(2n) {
+    background-color: #f1f1f1;
+}
+.detail {
+    width: 200px;
+    display: inline-block;
+}
+.edit,.delete {
+    position: absolute;
+    top: 13px;
+}
+.edit img,.delete img{
+    width: 100%;
+}
+.edit {
+    width: 25px;
+    right: 50px;
+}
+.delete {
+    width: 20px;
+    right: 20px; 
+}

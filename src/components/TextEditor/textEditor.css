@@ -1,0 +1,7 @@
+.text-editor {
+    height: 500px;
+}
+.text-editor-wrapper {
+    border-radius: 2px;
+    border: 1px solid #F1F1F1;
+}
