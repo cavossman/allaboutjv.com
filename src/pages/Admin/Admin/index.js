@@ -9,6 +9,9 @@ import Add from '../../../images/add.svg';
 
 import './admin.css';
 
+const CHARLIMIT = 20;
+const FIELDLIMIT = 5;
+
 const adminSettings = [
     {
         collection: 'poems',
@@ -66,13 +69,12 @@ class Admin extends Component {
             cachedData: {
                 'music': [
                     {
-                        'title': 'music test',
+                        'title': 'music',
                         'URL': 'rest'
                     },
                     {
-                        'title': 'test',
-                        'body': 'testing',
-                        'featured': 'true'
+                        'title': 'music test',
+                        'URL': 'this is a pretty song, it isn\'t very long, ay!'
                     }
                 ],
                 'poems': [
@@ -99,10 +101,28 @@ class Admin extends Component {
                 ]
             } // TODO: use to cache existing data when user opens section it makes api call, store that here to prevent hitting api every time.
         }
+        this.handleAdd = this.handleAdd.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
 
         this.displayCollection = this.displayCollection.bind(this);
+    }
+
+    handleAdd() {
+        console.log('open up modal to add ' + this.state.openCollection);
+    }
+    
+    handleEdit(item) {
+        console.log('open up modal to edit ' + this.state.openCollection);
+        console.log('edit ', item)
+    }
+
+    handleDelete(item) {
+        console.log('open up modal to delete ' + this.state.openCollection);
+        console.log('delete ', item);
     }
 
     handleChange(event) {
@@ -150,24 +170,41 @@ class Admin extends Component {
                                     {
                                         this.state.cachedData[section.collection].map((item, j) => {
                                             return (
-                                                <ul className="row" key={j}>
+                                                <div key={j}>
                                                 {
-                                                    Object.keys(item).map((key, k) => {
-                                                        return (
-                                                            <li className="detail" key={k}>
-                                                                {item[key]}
-                                                            </li>
-                                                        )
-                                                    })
+                                                    j === 0 &&
+                                                    <ul className="field-list">
+                                                        {
+                                                            Object.keys(item).map((key, x) => {
+                                                                if (x < FIELDLIMIT) 
+                                                                    return (
+                                                                        <li className="detail" key={x}>
+                                                                            {key}
+                                                                        </li>
+                                                                    )
+                                                            })
+                                                        }
+                                                    </ul>
                                                 }
-                                                <li className="edit"><img src={Edit} alt="" /></li>
-                                                <li className="delete"><img src={Delete} alt="" /></li>
-                                                </ul>
+                                                    <ul className="row">
+                                                    {
+                                                        Object.keys(item).map((key, y) => {
+                                                            return (
+                                                                <li className="detail" key={y}>
+                                                                    {item[key].length > CHARLIMIT ? item[key].substr(0, CHARLIMIT -3 ) + '...' : item[key]}
+                                                                </li>
+                                                            )
+                                                        })
+                                                    }
+                                                    <li className="edit"><img src={Edit} alt="" onClick={() => this.handleEdit(item)} /></li>
+                                                    <li className="delete"><img src={Delete} alt="" onClick={() =>this.handleDelete(item)} /></li>
+                                                    </ul>
+                                                </div>
                                             )
                                         })
                                     }
-                                    <ul className="row" style={{textAlign:'center'}}>
-                                        <img src={Add} alt="" style={{height:'20px'}} />
+                                    <ul className="row" style={{textAlign:'center'}} onClick={this.handleAdd}>
+                                        <li className="add"><img src={Add} alt="" /></li>
                                     </ul>
                                     </div>
                                 }

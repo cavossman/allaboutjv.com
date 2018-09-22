@@ -23,13 +23,18 @@
 .flip {
     transform: scaleY(-1);
 }
-
+.collection-results .field-list {
+    position: relative;
+    padding: 15px;
+    margin: 0;
+    border-bottom: 1px solid #7db9b9;
+}
 .collection-results .row {
     position: relative;
     padding: 15px;
     margin: 0;
 }
-.collection-results .row:nth-child(2n) {
+.collection-results div:nth-child(2n) {
     background-color: #f1f1f1;
 }
 .detail {
@@ -40,7 +45,7 @@
     position: absolute;
     top: 13px;
 }
-.edit img,.delete img{
+.edit img,.delete img,.add img {
     width: 100%;
 }
 .edit {
@@ -50,4 +55,11 @@
 .delete {
     width: 20px;
     right: 20px; 
+}
+.add {
+    width: 20px;
+    margin: 0 auto;
+}
+.edit,.delete,.add {
+    cursor: pointer;
 }
