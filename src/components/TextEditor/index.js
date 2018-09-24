@@ -21,6 +21,7 @@ class TextEditor extends Component {
     this.setState({
       editorState,
     });
+    this.props.onChange(this.props.name, draftToHtml(convertToRaw(this.state.editorState.getCurrentContent())));
   };
 
   render() {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Item from './Item';
+import Modal from '../../../components/Modal';
+import AdminModal from './AdminModal';
 
 import DownCarrot from '../../../images/down-carrot.svg';
 import Add from '../../../images/add.svg';
@@ -16,7 +18,7 @@ class Collection extends Component {
         this.state = {
             open: false,
             section: {
-                'collection': this.props.collection,
+                'collection': this.props.settings.collection,
                 'data': []
             }
         }
@@ -27,7 +29,7 @@ class Collection extends Component {
     }
 
     handleAdd() {
-        console.log('open up modal to add ' + this.state.openCollection);
+        Modal.open('modalAdd' + this.state.section.collection);
     }
 
     displayCollection(collection) {
@@ -48,6 +50,7 @@ class Collection extends Component {
         return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
+    // could replace this with an api call or something since using it to hide results and force user to grab fresh results anyways.
     collapseSection() {
         this.setState({open: false});
     }
@@ -56,6 +59,7 @@ class Collection extends Component {
         const collection = this.state.section.collection;
         return (
             <div className={'admin-section'}>
+                <AdminModal settings={this.props.settings} collapseSection={this.collapseSection} />
                 <div className="collection-selector" onClick={() => this.displayCollection(collection)}>
                     <h3 className="unselectable">{this.capitalizeFirstLetter(collection)}</h3>
                     <img className={'expand-section ' + (this.state.open ? 'flip' : '')} src={ DownCarrot } alt="expand" />
