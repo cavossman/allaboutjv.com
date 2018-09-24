@@ -37,7 +37,12 @@ class Collection extends Component {
             .get('http://localhost:5000/api/v1/' + collection)
             .then(res => {
                 if (res.status === 200 && res.data) {
-                    this.state.section.data = res.data;
+                    this.setState(previousState => ({
+                        section: {
+                            ...previousState.section,
+                            data: res.data
+                        }
+                    })); 
                 }
             })
             .catch(error => {

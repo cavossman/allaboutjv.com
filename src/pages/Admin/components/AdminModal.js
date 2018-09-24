@@ -21,7 +21,6 @@ class AdminModal extends Component {
   }
 
   handleChange(event) {
-    console.log('change');
     if (event.target.type === 'checkbox') {
       this.setState({ [event.target.name]: event.target.checked });
     } else {
@@ -30,23 +29,19 @@ class AdminModal extends Component {
   }
 
   textEditorChange(name, value) {
-    console.log(name, value);
     this.setState({[name]: value})
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('submit');
-    console.log(this.state);
 
     axios
       .post('http://localhost:5000/api/v1/' + this.props.settings.collection, {...this.state})
       .then(res => {
           if (res.status === 200 && res.data) {
-              console.log('collection saved');
+              this.props.collapseSection();
+              Modal.close('modalAdd'+this.props.settings.collection);
           }
-          this.props.collapseSection();
-          Modal.close('modalAdd'+this.props.settings.collection);
       })
       .catch(error => {
           console.warn(error);
@@ -54,7 +49,7 @@ class AdminModal extends Component {
   }
 
   componentDidMount() {
-    this.props.settings.fields.map((field) => {
+    this.props.settings.fields.forEach((field) => {
       this.setState({[field.key]: field.type === 'checkbox' ? false : ''})
     });
   }
@@ -88,41 +83,3 @@ class AdminModal extends Component {
   }
 }
 export default AdminModal;
-
-/* SAVE FOR FORM
-
-// import axios from 'axios';
-// import TextEditor from '../../../components/TextEditor';
-
-    handleChange(event) {
-        // need to update this to create and update object in formData
-        // this.setState({ [event.target.name]: event.target.value });
-    }
-
-    handleSubmit(event) {
-        // event.preventDefault();
-        // axios
-        //     .post('http://localhost:5000/api/v1/' + this.state.openCollection, {
-        //         // need to loop through keys and values in form.data -- spread operator?
-        //         title: this.state.title,
-        //         body: this.state.body,
-        //         featured: this.state.featured
-        //     })
-        //     .then(res => {
-        //         if (res.status === 200 && res.data) {
-        //             console.log('collection saved');
-        //         }
-        //     })
-        //     .catch(error => {
-        //         console.warn(error);
-        //     })
-    }
-<form>
-    <label htmlFor="title">Title: </label>
-    <input type="text" name="title" value={this.state.title} onChange={this.handleChange} />
-    <label htmlFor="body">Body: </label>
-    <TextEditor />
-    <label htmlFor="featured">Featured: </label>
-    <input type="checkbox" name="featured" value={this.state.featured} onChange={this.handleChange} />
-    <button type="submit" onClick={this.handleSubmit}>Save</button>
-</form> */

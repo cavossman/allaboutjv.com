@@ -17,7 +17,6 @@ class TextEditor extends Component {
   }
 
   onEditorStateChange(editorState) {
-    console.log(draftToHtml(convertToRaw(this.state.editorState.getCurrentContent())));
     this.setState({
       editorState,
     });
