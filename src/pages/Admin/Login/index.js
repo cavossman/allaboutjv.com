@@ -20,7 +20,7 @@ class Login extends Component {
         this.setState({ [event.target.name]: event.target.value });
     }
 
-    //TODO: complete validation - server returning wrong response if password is incorrect.
+    //TODO: client side validation - want to make sure to do some validation here
     handleSubmit(event) {
         event.preventDefault();
         axios
@@ -32,9 +32,8 @@ class Login extends Component {
             })
             .then(res => {
                 console.log(res);
-                if (res.status === 200 && res.data) {
-                    console.log('good job kid');
-                    this.props.updateUser({loggedIn: true, username: res.data.username});
+                if (res.status === 200 && res.data.validCredentials) {
+                    this.props.updateUser(true, res.data.username);
                     this.setState({redirectTo: '/admin'});
                 }
             })
@@ -49,7 +48,7 @@ class Login extends Component {
         } else {
             return (
                 <div className="page login-page">
-                    <form>
+                    <form className="loginForm">
                         <label htmlFor="username">Username: </label>
                         <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
                         <label htmlFor="password">Password: </label>

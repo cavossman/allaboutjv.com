@@ -1,0 +1,23 @@
+.loginForm {
+    width: 500px;
+    max-width: 100%;
+    padding: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+.loginForm label {
+    float: left;
+    margin-top: 20px;
+}
+.loginForm input {
+    width: 100%;
+    padding: 12px 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    background-color: #f8f8f8;
+}
+.loginForm button {
+    padding: 15px 30px;
+    margin-top: 15px;
+}

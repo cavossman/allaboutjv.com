@@ -34,8 +34,6 @@ class Entry extends Component {
 
   updateUser(userStatus, name) {
     this.setState({username: name, loggedIn: userStatus});
-    console.log('this.state.username: ', this.state.username);
-    console.log('this.state.loggedIn: ', this.state.loggedIn);
   }
 
   //TODO: Create redirect on admin unless user is authenticated - use express-session or something on server? 
@@ -51,7 +49,7 @@ class Entry extends Component {
               <Route exact path="/life" component={ Life } />
               <Route exact path="/poetry" component={ Poetry } />
               <Route exact path="/book" component={ Book } />
-              <Route exact path="/admin" component={ Admin } />
+              <Route exact path="/admin" render={(props) => {return <Admin {...props} username={this.state.username} />} } />
 
               <Route exact path="/login" render={ (props) => {  return <Login {...props} updateUser={this.updateUser} /> } } />
 
