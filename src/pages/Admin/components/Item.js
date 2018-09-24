@@ -7,6 +7,7 @@ import Delete from '../../../images/delete.svg';
 import '../Admin/admin.css';
 
 const CHARLIMIT = 20;
+const DELETEMSG = 'Are you sure you want to delete this item?';
 
 class Item extends Component {
     constructor(props) {
@@ -24,21 +25,17 @@ class Item extends Component {
     }
 
     handleDelete(item) {
-        console.log('open up modal to delete ' + this.state.collection);
-        console.log('delete ', item);
-
-        axios
-            .delete('http://localhost:5000/api/v1/' + this.state.openCollection + '/' + item._id) 
-            .then(res => {
-                if (res.status === 200 && res.data) {
-                    console.log('item deleted');
-                    console.log(res);
-                    // this.state.data = res.data;
-                }
-            })
-            .catch(error => {
-                console.warn(error);
-            })
+        if (window.confirm(DELETEMSG))
+            axios
+                .delete('http://localhost:5000/api/v1/' + this.state.collection + '/' + item._id) 
+                .then(res => {
+                    if (res.status === 200 && res.data) {
+                        this.props.collapseSection();
+                    }
+                })
+                .catch(error => {
+                    console.warn(error);
+                })
     }
 
     displayValue(value) {

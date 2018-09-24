@@ -21,6 +21,7 @@ class Collection extends Component {
             }
         }
         this.handleAdd = this.handleAdd.bind(this);
+        this.collapseSection = this.collapseSection.bind(this)
 
         this.displayCollection = this.displayCollection.bind(this);
     }
@@ -45,6 +46,10 @@ class Collection extends Component {
 
     capitalizeFirstLetter(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    collapseSection() {
+        this.setState({open: false});
     }
 
     render() {
@@ -77,7 +82,7 @@ class Collection extends Component {
                                         }
                                     </ul>
                                 }
-                                    <Item item={item} collection={collection} />
+                                    <Item item={item} collection={collection} collapseSection={this.collapseSection} />
                                 </div>
                             )
                         })
