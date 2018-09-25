@@ -36,6 +36,11 @@ const adminSettings = [
                 name: 'URL',
                 key: 'contentUrl',
                 type: 'text'
+            },
+            {
+                name: 'Featured',
+                key: 'featured',
+                type: 'checkbox'
             }
         ]
     }

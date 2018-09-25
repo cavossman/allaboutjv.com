@@ -10,6 +10,7 @@ import lainey_sunflower1 from '../../images/photos/lainey-sunflower1.JPG';
 import sunflower_sunset from '../../images/photos/sunflower-sunset.JPG';
 import ts_fountain from '../../images/photos/ts-fountain.JPG';
 import ts from '../../images/photos/ts.JPG';
+import family_sunflowers from '../../images/photos/family-sunflowers.jpg';
 
 
 import './photos.css';
@@ -22,7 +23,8 @@ const photos = [
                   lainey_sunflower1,
                   sunflower_sunset,
                   ts_fountain,
-                  ts
+                  ts,
+                  family_sunflowers
                 ];
 
 class Photos extends Component {
