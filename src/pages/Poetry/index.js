@@ -13,7 +13,7 @@ class Poetry extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/api/v1/poems')
+      .get('https://api.allaboutjv.com/api/v1/poems')
       .then((res) => {
         console.log(res.data);
         this.setState({poems: res.data});

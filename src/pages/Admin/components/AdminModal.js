@@ -36,7 +36,7 @@ class AdminModal extends Component {
     event.preventDefault();
 
     axios
-      .post('http://localhost:5000/api/v1/' + this.props.settings.collection, {...this.state})
+      .post('https://api.allaboutjv.com/api/v1/' + this.props.settings.collection, {...this.state})
       .then(res => {
           if (res.status === 200 && res.data) {
               this.props.collapseSection();

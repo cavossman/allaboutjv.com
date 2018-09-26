@@ -27,7 +27,7 @@ class Item extends Component {
     handleDelete(item) {
         if (window.confirm(DELETEMSG))
             axios
-                .delete('http://localhost:5000/api/v1/' + this.state.collection + '/' + item._id) 
+                .delete('https://api.allaboutjv.com/api/v1/' + this.state.collection + '/' + item._id) 
                 .then(res => {
                     if (res.status === 200 && res.data) {
                         this.props.collapseSection();

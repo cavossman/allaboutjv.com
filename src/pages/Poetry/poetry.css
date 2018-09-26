@@ -1,8 +1,10 @@
 .poetry-page {
   background-color: var(--colorBlue);
+  text-align: center;
 }
 .poem {
   font-family: 'Courier New';
+  text-align: left;
   display: inline-block;
   vertical-align: top;
   background-color: #fff;

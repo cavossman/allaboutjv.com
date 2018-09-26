@@ -34,7 +34,7 @@ class Collection extends Component {
 
     displayCollection(collection) {
         axios
-            .get('http://localhost:5000/api/v1/' + collection)
+            .get('https://api.allaboutjv.com/api/v1/' + collection)
             .then(res => {
                 if (res.status === 200 && res.data) {
                     this.setState(previousState => ({
