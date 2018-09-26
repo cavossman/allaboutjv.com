@@ -27,7 +27,7 @@ class Index extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/api/v1/music')
+      .get('https://api.allaboutjv.com/api/v1/music')
       .then((res) => {
         console.log(res.data);
         this.setState({songs: res.data});
