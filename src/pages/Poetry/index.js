@@ -15,7 +15,6 @@ class Poetry extends Component {
     axios
       .get('https://api.allaboutjv.com/api/v1/poems')
       .then((res) => {
-        console.log(res.data);
         this.setState({poems: res.data});
       })
       .catch((err) => {

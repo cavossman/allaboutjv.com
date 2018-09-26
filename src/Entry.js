@@ -39,7 +39,7 @@ class Entry extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/user/loggedIn')
+      .get('https://api.allaboutjv.com/user/loggedIn')
       .then((res) => {
         // Use this to check sessions when implemented and update loggedIn if authorized
       })

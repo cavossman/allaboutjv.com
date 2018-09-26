@@ -29,7 +29,6 @@ class Index extends Component {
     axios
       .get('https://api.allaboutjv.com/api/v1/music')
       .then((res) => {
-        console.log(res.data);
         this.setState({songs: res.data});
       })
       .catch((err) => {

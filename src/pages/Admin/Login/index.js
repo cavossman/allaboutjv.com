@@ -31,7 +31,6 @@ class Login extends Component {
                 }
             })
             .then(res => {
-                console.log(res);
                 if (res.status === 200 && res.data.validCredentials) {
                     this.props.updateUser(true, res.data.username);
                     this.setState({redirectTo: '/admin'});
